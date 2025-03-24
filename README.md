@@ -1,6 +1,6 @@
 # ci-cd-backend
 
-This project is a REST API backend built with Express.js and pg-promise for PostgreSQL database interactions. It is designed to facilitate continuous integration and continuous deployment (CI/CD) processes.
+This project is a REST API backend built with Express.js and pg-promise for PostgreSQL database interactions. A basic project to practice CI/CD and AWS.
 
 ## Table of Contents
 
@@ -13,16 +13,19 @@ This project is a REST API backend built with Express.js and pg-promise for Post
 ## Installation
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/yourusername/ci-cd-backend.git
    ```
 
 2. Navigate to the project directory:
+
    ```
    cd ci-cd-backend
    ```
 
 3. Install the dependencies:
+
    ```
    npm install
    ```
@@ -32,6 +35,7 @@ This project is a REST API backend built with Express.js and pg-promise for Post
 ## Usage
 
 To start the server, run:
+
 ```
 npm start
 ```
@@ -40,8 +44,9 @@ The server will be running on `http://localhost:3000`.
 
 ## API Endpoints
 
-- `GET /items` - Retrieve a list of items.
-- `POST /items` - Create a new item.
+- `GET /api/tasks` - Retrieve a list of tasks.
+- `POST /api/tasks/create-task` - Create a new task.
+- `PUT /api/tasks/task/:id/completed` - Update the status of a task to completed.
 
 ## Environment Variables
 
