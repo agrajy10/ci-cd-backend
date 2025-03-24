@@ -52,7 +52,13 @@ The server will be running on `http://localhost:3000`.
 
 The following environment variables are required:
 
-- `DATABASE_URL` - Connection string for the PostgreSQL database.
+- `DB_NAME` - Name of the PostgreSQL database.
+- `DB_USER` - Username for the PostgreSQL database.
+- `DB_PASSWORD` - Password for the PostgreSQL database.
+- `DB_HOST` - Host address of the PostgreSQL database.
+- `DB_PORT` - Port number for the PostgreSQL database.
+- `PORT` - Port number on which the server will run.
+- `NODE_ENV` - Node environment (e.g., development, production).
 
 ## License
 
