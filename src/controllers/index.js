@@ -21,11 +21,11 @@ class IndexController {
   }
 
   async createTask(req, res) {
-    const { title, deadline } = req.body;
+    const { title, deadline, created_at } = req.body;
     try {
       const result = await db.one(
-        "INSERT INTO tasks (title, deadline, status) VALUES ($1, $2, $3) RETURNING *",
-        [title, deadline, "pending"]
+        "INSERT INTO tasks (title, deadline, status, created_at) VALUES ($1, $2, $3, $4) RETURNING *",
+        [title, deadline, "pending", created_at]
       );
       res.status(201).json({
         success: true,
@@ -42,10 +42,11 @@ class IndexController {
 
   async updateTaskStatus(req, res) {
     const { id } = req.params;
+    const { completed_at } = req.body;
     try {
       const result = await db.one(
-        "UPDATE tasks SET status = $1, completed_at = CURRENT_TIMESTAMP WHERE id = $2 RETURNING *",
-        ["completed", id]
+        "UPDATE tasks SET status = $1, completed_at = $2 WHERE id = $3 RETURNING *",
+        ["completed", completed_at, id]
       );
       res.status(200).json({
         success: true,
